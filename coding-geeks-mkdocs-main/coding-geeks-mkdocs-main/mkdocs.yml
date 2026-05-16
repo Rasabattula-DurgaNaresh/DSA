@@ -1,0 +1,193 @@
+site_name: Coding Geeks
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.indexes
+    - navigation.sections
+    - content.code.copy
+
+# Page tree
+nav:
+  - Home: index.md
+  - Data structure:
+    - index/data-structure/index.md
+    - List: 
+      - index/list/index.md
+    - Linked list: data-structure/data-structure-linked-list.md
+    - Stack: data-structure/data-structure-stack.md
+    - Queue: data-structure/data-structure-queue.md
+    - Deque: data-structure/data-structure-deque.md
+    - LRU cache: data-structure/data-structure-lru-cache.md
+    - LFU cache: data-structure/data-structure-lfu-cache.md
+    - Monotonic queue: data-structure/data-structure-monotonic-queue.md
+    - Skip list: data-structure/data-structure-skip-list.md
+    - Tree: 
+      - index/tree/index.md
+      - Binary tree: data-structure/data-structure-binary-tree.md
+      - Binary search tree: data-structure/data-structure-binary-search-tree.md
+      - Red black tree: data-structure/data-structure-red-black-tree.md
+      - N-ary tree: data-structure/data-structure-nary-tree.md
+      - B tree: data-structure/data-structure-b-tree.md
+      - B+ tree: data-structure/data-structure-b-plus-tree.md
+      - Trie: data-structure/data-structure-trie.md
+      - Segment tree: data-structure/data-structure-segment-tree.md
+      - Fenwick tree: data-structure/data-structure-fenwick-tree.md
+    - Set and map: 
+      - index/map/index.md
+      - HashMap: data-structure/data-structure-hashmap.md
+      - Heap: data-structure/data-structure-heap.md
+      - Bloom filter: data-structure/data-structure-bloom-filter.md
+    - Graph: 
+      - index/graph/index.md
+      - Graph: data-structure/data-structure-graph.md
+      #- Graph Problems: data-structure/data-structure-graph-problems.md
+      - Bipartite graph: data-structure/data-structure-bipartite-graph.md
+      - Directed graph: data-structure/data-structure-directed-graph.md
+      - Topological sorting: data-structure/data-structure-topological-sorting.md
+      - Minimum spanning tree: data-structure/data-structure-minimum-spanning-tree.md
+  - Algorithm:
+    - index/algorithm/index.md
+    - Sorting:
+      - index/sorting/index.md
+      - Basic sorting algorithms: algorithm/algorithm-sorting.md
+      - Heap sort: algorithm/algorithm-sorting.md
+      - Merge sort: algorithm/algorithm-sorting.md
+      - Quick sort: algorithm/algorithm-sorting.md
+      - Bucket sort: algorithm/algorithm-sorting.md
+    - Common algorithms:
+      #- index/commons/index.md
+      - Binary search: algorithm/algorithm-binary-search.md
+      - Divide and conquer: algorithm/algorithm-divide-and-conquer.md
+      - BFS and DFS: algorithm/algorithm-bfs-and-dfs.md
+      - Two pointers: algorithm/algorithm-two-pointers.md
+      - Combination and permutation: algorithm/algorithm-combination-and-permutation.md
+      - Union find: algorithm/algorithm-union-find.md
+    - Dynamic programming:
+      - index/dp/index.md
+      - Dynamic programming: algorithm/algorithm-dynamic-programming.md
+      - Sequence DP: algorithm/algorithm-sequence-dp.md
+      - Two sequences DP: algorithm/algorithm-two-sequences-dp.md
+      - Matrix DP: algorithm/algorithm-matrix-dp.md
+      - Knapsack problems: algorithm/algorithm-knapsack-problems.md
+    - Other Algorithms:
+      #- index/other/index.md
+      - Sweep line: algorithm/algorithm-sweep-line.md
+      - Sqrt decomposition: algorithm/algorithm-sqrt-decomposition.md
+      - Minimax algorithm: algorithm/algorithm-minimax-algorithm.md
+      - Map reduce: algorithm/algorithm-map-reduce.md
+      - Pre sum: algorithm/algorithm-pre-sum.md
+      - Coordinate: algorithm/algorithm-coordinate.md
+      - Bit manipulation: algorithm/algorithm-bit-manipulation.md
+      - Math: algorithm/algorithm-math.md
+      - Random: algorithm/algorithm-random.md
+  - Java Core:
+      - Basic: java-core/java-core-basic.md
+      - Formatting: java-core/java-core-formatting.md
+      - Array and List: java-core/java-core-array-and-list.md
+      - Iterator: java-core/java-core-iterator.md
+      - Enum: java-core/java-core-enum.md
+      - Scanner: java-core/java-core-scanner.md
+      - Collection: java-core/java-core-collection.md
+      - ArrayList and LinkedList: java-core/java-core-arraylist-and-linkedlist.md
+      - Stack, Queue and Deque: java-core/java-core-stack-queue-and-deque.md
+      - Set: java-core/java-core-set.md
+      - Map: java-core/java-core-map.md
+      - Comparable vs Comparator: java-core/java-core-comparable-vs-comparator.md
+      - Generics: java-core/java-core-generics.md
+      - Generics Type Erasure: java-core/java-core-generics-type-erasure.md
+      - Static Block and Initialization Block: java-core/java-core-static-block.md
+      - BitSet: java-core/java-core-bitset.md
+      - Socket: java-core/java-core-socket.md
+      - IO: java-core/java-core-io.md
+      - NIO: java-core/java-core-nio.md
+      - IO vs NIO: java-core/java-core-io-vs-nio.md
+      - Java Tricks: java-core/java-core-java-tricks.md
+  - Java Concurrency:
+      - Concurrency overview: java-concurrency/java-concurrency-overview.md
+      - MultiThreading: java-concurrency/java-concurrency-multithreading.md
+      - wait, notify and notifyAll: java-concurrency/java-concurrency-wait-notify-notifyall.md
+      - Thread Pool: java-concurrency/java-concurrency-thread-pool.md
+      - Callable and Future: java-concurrency/java-concurrency-callables-and-futures.md
+      - Fork Join: java-concurrency/java-concurrency-fork-join.md
+      - Synchronization: java-concurrency/java-concurrency-synchronization.md
+      - Synchronizers: java-concurrency/java-concurrency-synchronizers.md
+      - Volatile: java-concurrency/java-concurrency-volatile.md
+      - ThreadLocal: java-concurrency/java-concurrency-threadlocal.md
+      - Thread Signaling: java-concurrency/java-concurrency-thread-signaling.md
+      - Dead Lock: java-concurrency/java-concurrency-dead-lock.md
+      - ConcurrentSkipListMap: java-concurrency/java-concurrency-concurrentskiplistmap.md
+      - Volatile, Final and Atomics: java-concurrency/java-concurrency-volatile-final-atomics.md
+      - BlockingQueue: java-concurrency/java-concurrency-blockingqueue.md
+      - Reading Files in Parallel: java-concurrency/java-concurrency-reading-files-in-parallel.md
+  - Java 8:
+      - Tricks: java-java8/java-8-tricks.md
+      - New Features in Java 8: java-java8/java-8-new-features.md
+      - Functional programming: java-java8/java-8-functional-programming.md
+      - Higher Order Functions: java-java8/java-8-higher-order-functions.md
+      - Functional Interfaces: java-java8/java-8-functional-interfaces.md
+      - Functional Composition: java-java8/java-8-functional-composition.md
+      - Stream API: java-java8/java-8-stream-api.md
+      - Predicate: java-java8/java-8-predicate.md
+      - Lazy Execution with Lambda: java-java8/java-8-lazy-execution-with-lambda.md
+  - Design pattern:
+    - index/design-pattern/index.md
+    - Creational Pattern:
+      - Singleton: design-pattern/design-pattern-singleton.md
+      - Factory: design-pattern/design-pattern-factory.md
+      - Builder: design-pattern/design-pattern-builder.md
+      - Prototype: design-pattern/design-pattern-prototype.md
+      - DTO: design-pattern/design-pattern-dto.md
+    - Structural Pattern:
+      - Adapter: design-pattern/design-pattern-adapter.md
+      - Bridge: design-pattern/design-pattern-bridge.md
+      - Composite: design-pattern/design-pattern-composite.md
+      - Decorator: design-pattern/design-pattern-decorator.md
+      - Facade: design-pattern/design-pattern-facade.md
+      - Flyweight: design-pattern/design-pattern-flyweight.md
+      - Proxy: design-pattern/design-pattern-proxy.md
+    - Behavioral Pattern:
+      - Command: design-pattern/design-pattern-command.md
+      - Interpreter: design-pattern/design-pattern-interpreter.md
+      - Iterator: design-pattern/design-pattern-iterator.md
+      - Mediator: design-pattern/design-pattern-mediator.md
+      - Memento: design-pattern/design-pattern-memento.md
+      - Null Object: design-pattern/design-pattern-null-object.md
+      - Observer: design-pattern/design-pattern-observer.md
+      - State: design-pattern/design-pattern-state.md
+      - Strategy: design-pattern/design-pattern-strategy.md
+      - Template Method: design-pattern/design-pattern-template-method.md
+      - Visitor: design-pattern/design-pattern-visitor.md
+  - Programming:
+    - Development Environment:
+      - Getting Started with Linux: programming/getting-started-with-linux.md
+      - Getting Started with macOS: programming/getting-started-with-macos.md
+    - Java Core:
+      - Java Core - Basic: java/java-core-basic.md
+      - Java Core - Formatting: java/java-core-formatting.md
+  - Cloud:
+    - Cloud Knowledge:
+      - Cloud Service: cloud/cloud-service.md
+    - Amazon AWS:
+      - AWS Overview: cloud/aws-overview.md
+      - AWS Billing Alarm: cloud/aws-billing-alarm.md
+  - Tutorial:
+    - Angular Tutorial:
+      - Getting Started with Angular CLI: tutorial/getting-started-with-angular-cli.md
+    - React Tutorial:
+      - Getting Started with React: tutorial/getting-started-with-react.md
+  - About: about.md
+
+# Extensions
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+      linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  
