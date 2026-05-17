@@ -1,0 +1,59 @@
+/* Given an array A of strings made only from lowercase letters, 
+return a list of all characters that show up in all strings within the list 
+(including duplicates).  For example, if a character occurs 3 times in all strings but not 4 times, 
+you need to include that character three times in the final answer.
+You may return the answer in any order.
+Example 1:
+Input: ["bella","label","roller"]
+Output: ["e","l","l"]*/
+
+//Solution - https://www.geeksforgeeks.org/common-characters-n-strings/
+
+
+import java.util.*; 
+import java.lang.*; 
+  
+public class GFG { 
+  
+    static int MAX_CHAR = 26; 
+    public static void commonCharacters(String str[], 
+                                               int n) 
+    { 
+        int[] prim = new int[MAX_CHAR]; 
+        Arrays.fill(prim, 1); 
+        System.out.println("prim = "+Arrays.toString(prim));
+  
+        for (int i = 0; i < n; i++) { 
+            int[] sec = new int[MAX_CHAR]; 
+  
+            for (int j = 0; j < str[i].length(); j++) 
+            {  
+                int index = str[i].charAt(j) - 'a';
+                if (prim[index] == 1) 
+                    sec[index] = 1;  
+            } 
+            
+            System.arraycopy(sec, 0, prim, 0, MAX_CHAR);
+            System.out.println("sec after = "+Arrays.toString(sec));
+            System.out.println("prim after = "+Arrays.toString(prim));
+            System.out.println();
+        } 
+
+        for (int i = 0; i < 26; i++) 
+            if (prim[i] == 1){ 
+                System.out.print(Character.toChars(i+97)); 
+                System.out.print(" "); 
+            }  
+    } 
+ 
+    public static void main(String[] args) 
+    { 
+        String str[] = { "geeksforgeeks", 
+                         "gemkstones", 
+                         "acknowledges", 
+                         "aguelikes" }; 
+                         
+        int n = str.length; 
+        commonCharacters(str, n); 
+    } 
+} 

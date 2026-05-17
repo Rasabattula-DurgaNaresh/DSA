@@ -1,0 +1,43 @@
+//Description : https://leetcode.com/problems/combination-sum/
+//Solution : https://www.programcreek.com/2014/02/leetcode-combination-sum-java/
+//Expalination : https://www.youtube.com/watch?v=Viu3iQLmQlY&t=330s
+
+import java.util.*;
+public class CombiSum {
+
+   public static void main(String []args) {
+      int[] candidates = {2,3,6,7}; 
+      int target = 7;
+      List<List<Integer>> sum = combinationSum(candidates, target);
+      
+      System.out.println("sum = "+Arrays.toString(sum.toArray()));
+      
+   }
+   
+   public static List<List<Integer>> combinationSum(int[] candidates, int target) {
+    List<List<Integer>> result = new ArrayList<>();
+    List<Integer> temp = new ArrayList<>();
+    helper(candidates, 0, target, 0, temp, result);
+    return result;
+}
+ 
+private static void helper(int[] candidates, int start, int target, int sum, List<Integer> list, List<List<Integer>> result){
+    if(sum>target){
+        return;
+    }
+ 
+    if(sum==target){
+        result.add(new ArrayList<>(list));
+        System.out.println("result = "+Arrays.toString(result.toArray()));
+        return;
+    }
+ 
+    for(int i=start; i<candidates.length; i++){
+        list.add(candidates[i]);
+        System.out.println("list = "+Arrays.toString(list.toArray()));
+        helper(candidates, i, target, sum+candidates[i], list, result);
+        list.remove(list.size()-1);
+    }
+}
+   
+}

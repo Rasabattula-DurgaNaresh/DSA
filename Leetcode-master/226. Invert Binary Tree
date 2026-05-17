@@ -1,0 +1,60 @@
+//Problem - https://leetcode.com/problems/invert-binary-tree/
+//Solution - https://leetcode.com/problems/invert-binary-tree/solution/
+// T = O(n), S = O(n)
+
+class Node{
+	int data;
+	Node left, right;
+	
+	Node(int data){
+		this.data = data;
+	}
+}
+public class BinaryTree {
+	
+	public static void main(String[] argsS) {
+		BinaryTree tree = new BinaryTree();
+		Node root = new Node(4);
+		Node two = new Node(2);
+		Node seven = new Node(7);
+		Node one = new Node(1);
+		Node three = new Node(3);
+		Node six = new Node(6);
+		Node nine = new Node(9);
+		
+		root.left = two; 
+		root.right = seven;
+		
+		two.left = one; 
+		two.right = three;
+		
+		seven.left = six; 
+		seven.right = nine;
+		
+		Node temp = invertTree1(root);
+		printTree(temp);
+	}
+	
+static Node invertTree(Node root) {
+        if(root == null) {
+        	return null;
+        }
+        
+        Node Left = invertTree(root.left);
+        Node Right = invertTree(root.right);
+        
+        root.left = Right;
+        root.right = Left;
+        
+        return root;
+    }
+	
+	static void printTree(Node root) {
+		if(root != null) {
+			printTree(root.left);
+			System.out.print(root.data+"-->");
+			printTree(root.right);
+		}
+	}
+	
+}

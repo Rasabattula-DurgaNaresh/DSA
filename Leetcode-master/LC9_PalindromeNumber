@@ -1,0 +1,17 @@
+public boolean isPalindrome(int x) {
+  if(x < 0) return false;
+
+  int len = (int) Math.floor(Math.log(x)/Math.log(10)) + 1; // length of the number
+
+  for(int i = 1; i <= len/2; i++){
+    int d1 = getNthDigit(x,i);
+    int d2 = getNthDigit(x,len-i+1);
+    if(d1 != d2) return false;
+  }
+  return true;
+}
+
+// from right to left, ie f(934,1) = 4, f(934,3) = 9
+private int getNthDigit(int num, int n){
+  return (int) ((num % Math.pow(10,n)) / Math.pow(10,n-1));
+}

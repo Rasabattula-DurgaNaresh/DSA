@@ -1,0 +1,6 @@
+//Problem - https://leetcode.com/problems/maximal-square/
+/*Given a 2D binary matrix filled with 0's and 1's, find the largest square containing only 1's and return its area.*/
+//video = 221. Maximal Square
+//Code - https://www.ideserve.co.in/learn/maximum-size-square-sub-matrix-with-all-1s
+
+//Time complexity 

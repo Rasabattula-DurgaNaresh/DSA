@@ -1,0 +1,41 @@
+//Description:https://leetcode.com/problems/generate-parentheses/
+//Solution: https://github.com/bephrem1/backtobackswe/blob/master/Dynamic%20Programming%2C%20Recursion%2C%20%26%20Backtracking/generateNMatchedParenStrings.java
+//Explaination: https://www.youtube.com/watch?v=sz1qaKt0KGQ
+
+import java.util.*;
+
+public class GenerateParenthesis{
+    public static void main(String[] args){
+        int n = 3;
+        List result = generateParenthesis(n);
+        System.out.println(Arrays.toString(result.toArray()));
+    }
+
+
+public static List<String> generateParenthesis(int numPairs) {
+  List<String> result = new ArrayList<>();
+  generateParen(numPairs, numPairs, "", result); // kick off the recursion
+  return result;
+}
+
+private static void generateParen(int leftParens, int rightParens,
+                                                        String parenStringInProgress, List<String> result) {
+
+  
+  if (leftParens == 0 && rightParens == 0) {
+    result.add(parenStringInProgress);
+    return;
+  }
+
+ 
+  if (leftParens > 0) {
+    generateParen(leftParens - 1, rightParens, parenStringInProgress + "(", result);
+  }
+
+  
+  if (leftParens < rightParens) {
+    generateParen(leftParens, rightParens - 1, parenStringInProgress + ")", result);
+  }
+
+}
+}

@@ -1,0 +1,53 @@
+//T: O(N), S: O(N)
+import java.util.*;
+public class Solution {
+	public static void main(String[] args){
+		String p = "abc";
+		String s = "cbaebabacd";
+		List<Integer> list = findAnagramIndex(s, p);
+		System.out.println(list);
+	}
+	
+	static List<Integer> findAnagramIndex(String s, String p){
+		List<Integer> list = new ArrayList<>();
+		
+		if(s == null || s.length() == 0 || p == null || p.length() == 0){
+			return list;
+		}
+		
+		int[] pArr = new int[26];
+		int[] sArr = new int[26];
+		
+		for(int i = 0; i < p.length(); i++){
+			pArr[p.charAt(i) - 'a']++;
+			sArr[s.charAt(i) - 'a']++;
+		}
+		
+		int start = 0, end = p.length();
+		
+		while(end < s.length()){
+			if(isAnagram(sArr, pArr)){
+				list.add(start);
+			}
+			 
+			sArr[s.charAt(start)- 'a']--;
+			start++;
+			sArr[s.charAt(end) - 'a']++;
+			end++;
+		}
+		if(isAnagram(sArr, pArr)){
+			list.add(start);
+		}
+		
+		return list;
+	}
+	
+	static boolean isAnagram(int[] sArr, int[] pArr){
+		for(int i = 0; i<sArr.length; i++){
+			if(sArr[i] != pArr[i]){
+				return false;
+			}
+		}
+		return true;
+	}
+}

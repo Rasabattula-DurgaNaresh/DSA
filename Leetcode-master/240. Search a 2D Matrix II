@@ -1,0 +1,54 @@
+//https://leetcode.com/problems/search-a-2d-matrix-ii/
+/* Write an efficient algorithm that searches for a value in an m x n matrix. This matrix has the following properties:
+Integers in each row are sorted in ascending from left to right.
+Integers in each column are sorted in ascending from top to bottom.*/
+
+//video - https://www.youtube.com/watch?v=ZhG1M_FzxgI
+//https://www.geeksforgeeks.org/search-in-row-wise-and-column-wise-sorted-matrix/
+//T = O(n)
+
+public class MyFirstJavaProgram {
+
+   public static void main(String []args) {
+      System.out.println("Hello World"); // prints Hello World
+      
+      int[][] arr = { {10, 20, 30, 40}, 
+                        {15, 25, 35, 45}, 
+                        {27, 29, 37, 48}, 
+                        {32, 33, 39, 50} };
+                        
+        int target = 30;
+        
+        System.out.println(isPresent(arr, target));
+   }
+   
+   static boolean isPresent(int[][] arr, int target){
+       
+       if(matrix == null || matrix.length == 0){
+            return false;
+       }
+       
+       int m = matrix.length;
+       int n = matrix[0].length;
+       
+       if(target < arr[0][0] || target > arr[n-1][n-1] ){
+           return false;
+       }
+       
+       int r = 0, c = n-1;
+       while(r<matrix.length &&  c>=0){
+            if(matrix[r][c] == target){
+                return true;
+            }
+            
+            else if(matrix[r][c] > target){
+                c--;
+            }
+            else{
+                r++;
+            }
+        }
+       
+       return false;
+   }
+}

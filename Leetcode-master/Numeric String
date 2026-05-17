@@ -1,0 +1,39 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    static int getMagicNumber(String s, int k, int b, int m){
+        // Complete this function
+        List<String> newString = new ArrayList<String>();
+        for(int i=0; i <= s.length()-k; i++){
+            newString.add(s.substring(i, i+k));
+        }
+       // System.out.println(newString);
+        int result = 0;
+        for(String str: newString){
+           int resultBaseb = Integer.parseInt(str, b);
+           int resultBase10 = Integer.parseInt(Integer.toString(resultBaseb, 10));
+           //System.out.println(resultBase10);
+            
+            result += resultBase10%m;
+        }
+        
+        //System.out.println(result);
+        return result;
+    }
+
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        String s = in.next();
+        int k = in.nextInt();
+        int b = in.nextInt();
+        int m = in.nextInt();
+        int result = getMagicNumber(s, k, b, m);
+        System.out.println(result);
+    }
+}

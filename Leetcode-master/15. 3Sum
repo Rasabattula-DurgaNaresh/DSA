@@ -1,0 +1,53 @@
+//solution : https://www.byte-by-byte.com/threesum/ -->bytebybyte
+
+import java.util.Arrays;
+import java.util.ArrayList;
+
+public class ThreeSum {
+   public static void main(String []args) {
+      
+      int[] arr = {-1, 0, 1, 2, -1, -4};
+      ArrayList<int[]> result = findThreeSum(arr);
+      
+      for(int[] currArr : result){
+          System.out.println(Arrays.toString(currArr));
+      }
+   }
+   
+   static ArrayList<int[]> findThreeSum(int[] arr){
+       Arrays.sort(arr);
+       
+       ArrayList<int[]> result = new ArrayList<int[]>();
+       
+       for(int i = 0; i<arr.length - 3; i++){
+           if(i == 0 || arr[i] > arr[i - 1]){
+               int start = i+1;
+               int end = arr.length-1;
+               
+               while(start < end){
+                   int sum = arr[i] + arr[start] + arr[end];
+                   
+                   if(sum == 0){
+                       result.add(new int[]{arr[i],arr[start],arr[end]});
+                   }
+                   
+                   if(sum < 0){
+                       int currStart = start;
+                       while(arr[currStart] == arr[start] && start < end){
+                            start++;
+                       }
+                   }
+                   
+                   else{
+                       int currEnd = end;
+                       while(arr[currEnd] == arr[end] && start < end){
+                            end--;
+                       }
+                   }
+               }
+           }
+           
+       }
+       return result;
+   }
+}

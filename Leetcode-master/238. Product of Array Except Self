@@ -1,0 +1,34 @@
+//Problem - https://leetcode.com/problems/product-of-array-except-self/
+//Given an array nums of n integers where n > 1,  return an array output such that output[i] is equal to the product of all the elements of nums except nums[i].
+//https://www.youtube.com/watch?v=vB-81TB6GUc
+//T = O(n), S = O(n)
+
+import java.util.Arrays;
+
+public class productOfArrayElements {
+	public static void main(String[] args) {
+		int[] arr = {1, 2, 3, 4};
+		System.out.println(Arrays.toString(findProduct(arr)));
+	}
+	
+	static int[] findProduct(int[] arr) {
+		int[] result = new int[arr.length];
+		int n = arr.length;
+		int tempL = 1;
+		
+		for(int i = 0; i < n; i++) {
+			result[i] = tempL;
+			tempL = tempL * arr[i];
+		}
+		
+		System.out.println(Arrays.toString(result));
+		
+		int tempR = 1;
+		for(int i = n-1; i >= 0; i--) {
+			result[i] = result[i]*tempR;
+			tempR = tempR * arr[i];
+		}
+		
+		return result;
+	}
+}

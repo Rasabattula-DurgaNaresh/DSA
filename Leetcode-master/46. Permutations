@@ -1,0 +1,40 @@
+//Description : https://leetcode.com/problems/permutations/
+//Explaination and soultion : https://www.youtube.com/watch?v=TvZaPND8_eo
+//T : O(N), S:O(N)
+
+import java.util.*;
+public class Permutations{
+
+   public static void main(String []args) {
+      int[] arr = {1, 2, 3};
+      List<List<Integer>> result = permutations(arr);
+      System.out.println(Arrays.toString(result.toArray()));
+   }
+   
+   static List<List<Integer>> permutations(int[] arr){
+       List<List<Integer>> res = new ArrayList<>();
+       List<Integer> list = new ArrayList<>();
+       
+       helper(arr, list, res);
+       return res;
+   }
+   
+   static void helper(int[] arr, List<Integer> list, List<List<Integer>> res){
+       if(list.size() == arr.length){
+           res.add(new ArrayList<>(list));
+           System.out.println("result = "+Arrays.toString(res.toArray()));
+           return;
+       }
+       
+       for(int i = 0; i<arr.length; i++){
+           if(list.contains(arr[i])){
+               continue;
+           }
+           list.add(arr[i]);
+           System.out.println("list add = "+Arrays.toString(list.toArray()));
+           helper(arr, list, res);
+           list.remove(list.size()-1);
+           System.out.println("list remove = "+Arrays.toString(list.toArray()));
+       }
+   }
+}

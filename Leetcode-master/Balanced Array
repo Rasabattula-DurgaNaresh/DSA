@@ -1,0 +1,44 @@
+/*  */
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    static int solve(int[] a){
+        // Complete this function
+        int start = 0;
+        int end = a.length-1;
+        int mid = (start+end)/2;
+        int sumFirst=0, sumLast=0;
+        
+        for(int i = 0; i<=mid; i++){
+            sumFirst += a[i];
+        }
+        
+        for(int i = mid+1; i<= end; i++){
+            sumLast += a[i];
+        }
+        
+        if(sumFirst == sumLast){
+            return 0;
+        }
+        else{
+            return Math.abs(sumFirst - sumLast);
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int num = scanner.nextInt();
+        int[] arr = new int[num];
+        for(int i=0; i < num; i++){
+            arr[i] = scanner.nextInt();
+        }
+        int result = solve(arr);
+        System.out.println(result);
+    }
+}

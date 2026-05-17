@@ -1,0 +1,82 @@
+//Problem = https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/
+//Given a binary tree, find the lowest common ancestor (LCA) of two given nodes in the tree.
+//Video and solution = https://www.youtube.com/watch?v=13m9ZCB8gjw
+//T = O(n)
+
+class Node{
+	int data;
+	Node left, right;
+	
+	Node(int data){
+		this.data = data;
+	}
+}
+public class BinaryTree {
+	static Node root;
+	
+	public static void main(String[] args) {
+		root = new Node(3);
+		Node two = new Node(6);
+		Node three = new Node(8);
+		Node four = new Node(2);
+		Node five = new Node(11);
+		Node six = new Node(13);
+		Node seven = new Node(9);
+		Node eight = new Node(5);
+		Node nine = new Node(7);
+		
+		root.left = two;
+		root.right = three;
+		
+		two.left = four;
+		two.right = five;
+		
+//		three.right = six;
+//		six.left = nine;
+		
+		five.left = seven;
+		five.right = eight;
+		
+		printTree(root);
+		System.out.print("null");
+		
+		Node result = findLCA(root, four, eight);
+		if(result != null) {
+			System.out.println("\nLCA is = "+result.data);
+		}
+		
+	}
+	
+	static void printTree(Node root) {
+		Node current = root;
+		if(current != null) {
+			printTree(current.left);
+			System.out.print(current.data+"-->");
+			printTree(current.right);
+		}
+		
+	}
+	
+	static Node findLCA(Node root, Node n1, Node n2) {
+		if(root == null) {
+			return null;
+		}
+		
+		if(root == n1 || root == n2) {
+			return root;
+		}
+		
+		Node left = findLCA(root.left, n1, n2);
+		Node right = findLCA(root.right, n1, n2);
+		
+		if(left != null && right != null) {
+			return root;
+		}
+		
+		if(left == null && right == null) {
+			return null;
+		}
+		
+		return left != null? left : right; 
+	}
+}

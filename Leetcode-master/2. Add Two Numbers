@@ -1,0 +1,70 @@
+//https://leetcode.com/problems/add-two-numbers/
+/* Complexity Analysis
+
+Time complexity : O(\max(m, n))O(max(m,n)). Assume that mm and nn represents the length of l1l1 and l2l2 respectively, the algorithm above iterates at most \max(m, n)max(m,n) times.
+
+Space complexity : O(\max(m, n))O(max(m,n)). The length of the new list is at most \max(m,n) + 1max(m,n)+1.
+*/
+public class Node{
+    int data;
+    Node next;
+    
+    Node(int data){
+        this.data = data;
+    }
+    
+    public static void main(String[] args){
+        Node n11 = new Node(2);
+        Node n12 = new Node(4);
+        Node n13 = new Node(3);
+        n11.next = n12;
+        n12.next = n13;
+        
+        Node n21 = new Node(5);
+        Node n22 = new Node(6);
+        Node n23 = new Node(4);
+        n21.next = n22;
+        n22.next = n23;
+        
+        Node result = addTwoNum(n11, n21);
+        
+        while(result != null){
+            System.out.print(result.data+"-->");
+            result = result.next;
+        }
+        System.out.println("null");
+    }
+    
+    static Node addTwoNum(Node n1, Node n2){
+        Node dummyHead = new Node(0);
+        
+        Node list1 = n1, list2 = n2, curr = dummyHead;
+        int carry = 0;
+        
+        while(list1 != null || list2 != null){
+            int x = list1 != null? list1.data : 0;
+            int y = list2 != null? list2.data : 0;
+            int sum = x + y + carry;
+            
+            carry = sum/10;
+            sum = sum%10;
+            
+            curr.next = new Node(sum);
+            
+            curr = curr.next;
+            if(list1 != null){
+              list1 = list1.next;
+            }
+            
+            if(list2 != null){
+              list2 = list2.next;
+            }
+        }
+        
+        if(carry > 0){
+            curr.next = new Node(carry);
+        }
+        
+        return dummyHead.next;
+    }
+}
