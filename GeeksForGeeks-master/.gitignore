@@ -1,0 +1,11 @@
+.metadata/*
+.recommenders/*
+/.settings/*
+*.classpath
+*.project
+*.class
+*.prefs
+/bin/*
+/bin/
+.idea/
+.iml
